@@ -1,0 +1,122 @@
+# ekf.yaml — Extended Kalman Filter configuration for TurtleBot3 Burger
+# This file tells robot_localization HOW to fuse sensor data
+
+ekf_filter_node:
+  ros__parameters:
+
+    # ── Core filter settings ──────────────────────────────────────────
+
+    # How often the filter runs — 50 times per second
+    # Must be higher than your fastest sensor publish rate
+    # TurtleBot3 IMU publishes at ~40Hz, odometry at ~30Hz
+    frequency: 50.0
+
+    # If a sensor goes silent for this many seconds, ignore its last reading
+    # 0.1s = if no data for 100ms, don't use stale values
+    sensor_timeout: 0.1
+
+    # two_d_mode: true means we only estimate x, y, and yaw
+    # We ignore z (height), roll, and pitch because a ground robot
+    # moves in a 2D plane — this simplifies computation significantly
+    two_d_mode: true
+
+    # print_diagnostics: publishes filter health to /diagnostics topic
+    # EXTREMELY useful for debugging — keep this true
+    print_diagnostics: true
+
+    # ── Coordinate frames ─────────────────────────────────────────────
+
+    # The fixed "world" frame — odometry is expressed relative to this
+    # odom frame represents: "where was the robot when it started"
+    odom_frame: odom
+
+    # The robot's base frame — all sensors are attached relative to this
+    # base_footprint is the footprint on the ground (base_link is the body)
+    base_link_frame: base_footprint
+
+    # The frame the filter publishes its estimate in
+    # Must match odom_frame for standard ROS 2 navigation
+    world_frame: odom
+
+    # ── Sensor 0: Wheel Encoder Odometry ─────────────────────────────
+
+    # Topic name — this is what TurtleBot3 publishes wheel encoder data to
+    odom0: /odom
+
+    # odom0_config: 15-element boolean array
+    # Controls WHICH state variables to take from this sensor
+    # Order: x,  y,  z,  roll, pitch, yaw,
+    #        vx, vy, vz, vroll,vpitch,vyaw,
+    #        ax, ay, az
+    #
+    # We use: vx (forward velocity) and vyaw (turning rate) from odometry
+    # Why NOT position x,y? Because odometry position drifts — we let
+    # the filter estimate position by integrating velocity instead
+    # Why NOT yaw directly? IMU gives better absolute orientation
+    odom0_config: [false, false, false,
+                   false, false, false,
+                   true,  true,  false,
+                   false, false, true,
+                   false, false, false]
+
+    # differential: true means odometry gives RELATIVE motion
+    # (change in position), not absolute position
+    # This is correct for wheel encoders — they measure rotation counts
+    odom0_differential: true
+
+    # How much to trust this sensor's built-in covariance values
+    # -1 = use the covariance values published in the message itself
+    # Our LSTM will later REPLACE these values dynamically
+    odom0_pose_rejection_threshold: 2.0
+    odom0_twist_rejection_threshold: 2.0
+
+    # ── Sensor 1: IMU ─────────────────────────────────────────────────
+
+    # TurtleBot3 Burger's IMU topic
+    imu0: /imu
+
+    # imu0_config: same 15-element array
+    # From IMU we use: roll, pitch, yaw (orientation)
+    # and vroll, vpitch, vyaw (angular velocity)
+    # We do NOT use accelerations (ax,ay,az) directly because
+    # Gazebo's simulated IMU has bias that would corrupt position estimates
+    imu0_config: [false, false, false,
+                  true,  true,  true,
+                  false, false, false,
+                  true,  true,  true,
+                  false, false, false]
+
+    # differential: false means IMU gives ABSOLUTE orientation
+    # (actual angle in world frame, not change in angle)
+    # This is the key advantage of IMU — it has a reference frame
+    imu0_differential: false
+
+    # Remove gravitational acceleration from IMU readings
+    # Simulated IMU in Gazebo includes gravity, filter needs pure motion data
+    imu0_remove_gravitational_acceleration: true
+
+    imu0_pose_rejection_threshold: 2.0
+    imu0_twist_rejection_threshold: 2.0
+
+    # ── Process noise covariance ──────────────────────────────────────
+    # This is a 15x15 diagonal matrix (only diagonal values matter here)
+    # Represents how much we trust our motion MODEL vs sensor updates
+    # Higher value = we think our motion model is less reliable
+    # These values are for a ground robot — tuned for TurtleBot3 scale
+    process_noise_covariance: [0.05,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.05,  0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.06,  0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.03,  0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.03,  0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.06,  0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.025,  0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.025,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.04,  0.0,   0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.01,  0.0,   0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.01,  0.0,   0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.02,  0.0,   0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.01,  0.0,   0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.01,  0.0,
+                               0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.0,    0.0,    0.0,   0.0,   0.0,   0.0,   0.0,   0.0,   0.015]
+
+    use_sim_time: true

@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: lstm-localizer
+Version: 0.0.1
+Summary: LSTM-based adaptive EKF covariance predictor
+Maintainer: Arham Ahmed
+Maintainer-email: arham@example.com
+License: MIT

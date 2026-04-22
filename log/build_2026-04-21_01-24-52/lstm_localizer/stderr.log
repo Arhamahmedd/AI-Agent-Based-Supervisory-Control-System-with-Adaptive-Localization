@@ -1,0 +1,5 @@
+  File "/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer/lstm_covariance_node.py", line 121
+    self.csv_writer.writerow([Fix the LSTM node to accept sim time:Fix the LSTFix the LSTFix the LSTFix the LSTFix the LSTM node to accept sim time:M node to accept sim time:M node to accept sim time:M node to accept sim time:M node to accept sim time:
+                              ^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+

@@ -1,0 +1,110 @@
+[0.000000] (-) TimerEvent: {}
+[0.008488] (-) JobUnselected: {'identifier': 'lstm_localizer'}
+[0.008658] (ai_supervisor) JobQueued: {'identifier': 'ai_supervisor', 'dependencies': OrderedDict()}
+[0.008718] (ai_supervisor) JobStarted: {'identifier': 'ai_supervisor'}
+[0.100149] (-) TimerEvent: {}
+[0.202137] (-) TimerEvent: {}
+[0.303660] (-) TimerEvent: {}
+[0.405782] (-) TimerEvent: {}
+[0.506691] (-) TimerEvent: {}
+[0.610035] (-) TimerEvent: {}
+[0.712581] (-) TimerEvent: {}
+[0.814172] (-) TimerEvent: {}
+[0.914838] (-) TimerEvent: {}
+[1.016061] (-) TimerEvent: {}
+[1.118102] (-) TimerEvent: {}
+[1.222117] (-) TimerEvent: {}
+[1.322623] (-) TimerEvent: {}
+[1.426263] (-) TimerEvent: {}
+[1.527029] (-) TimerEvent: {}
+[1.629118] (-) TimerEvent: {}
+[1.734110] (-) TimerEvent: {}
+[1.837931] (-) TimerEvent: {}
+[1.948231] (-) TimerEvent: {}
+[2.048672] (-) TimerEvent: {}
+[2.149296] (-) TimerEvent: {}
+[2.249687] (-) TimerEvent: {}
+[2.353787] (-) TimerEvent: {}
+[2.455005] (-) TimerEvent: {}
+[2.556914] (-) TimerEvent: {}
+[2.660881] (-) TimerEvent: {}
+[2.761571] (-) TimerEvent: {}
+[2.863907] (-) TimerEvent: {}
+[2.967860] (-) TimerEvent: {}
+[3.069433] (-) TimerEvent: {}
+[3.169925] (-) TimerEvent: {}
+[3.270593] (-) TimerEvent: {}
+[3.373729] (-) TimerEvent: {}
+[3.474230] (-) TimerEvent: {}
+[3.576135] (-) TimerEvent: {}
+[3.677704] (-) TimerEvent: {}
+[3.778812] (-) TimerEvent: {}
+[3.879564] (-) TimerEvent: {}
+[3.980087] (-) TimerEvent: {}
+[4.080805] (-) TimerEvent: {}
+[4.183491] (-) TimerEvent: {}
+[4.284367] (-) TimerEvent: {}
+[4.385063] (-) TimerEvent: {}
+[4.473564] (ai_supervisor) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ai_supervisor', 'build', '--build-base', '/home/arhamahmed/supervisor_ws/build/ai_supervisor/build', 'install', '--record', '/home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/arhamahmed/supervisor_ws/src/ai_supervisor', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'arhamahmed', 'FONTCONFIG_PATH': '/etc/fonts', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_EDITOR': ':', 'GIO_MODULE_DIR': '/home/arhamahmed/snap/code/common/.cache/gio-modules', 'XDG_SESSION_TYPE': 'x11', 'GTK_EXE_PREFIX_VSCODE_SNAP_ORIG': '', 'GDK_BACKEND_VSCODE_SNAP_ORIG': '', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/arhamahmed', 'CHROME_DESKTOP': 'code.desktop', 'LOCPATH_VSCODE_SNAP_ORIG': '', 'TERM_PROGRAM_VERSION': '1.116.0', 'DESKTOP_SESSION': 'ubuntu', 'GTK_PATH': '/snap/code/234/usr/lib/x86_64-linux-gnu/gtk-3.0', 'XDG_DATA_HOME_VSCODE_SNAP_ORIG': '', 'GTK_IM_MODULE_FILE': '/home/arhamahmed/snap/code/common/.cache/immodules/immodules.cache', 'GIO_LAUNCHED_DESKTOP_FILE': '/var/lib/snapd/desktop/applications/code_code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'GSETTINGS_SCHEMA_DIR_VSCODE_SNAP_ORIG': '', 'MANAGERPID': '2346', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'SYSTEMD_EXEC_PID': '2839', 'BUNDLED_DEBUGPY_PATH': '/home/arhamahmed/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '3739', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/arhamahmed/supervisor_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'arhamahmed', 'JOURNAL_STREAM': '9:16265', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'CLAUDE_CODE_SSE_PORT': '25544', 'XDG_SESSION_CLASS': 'user', 'XDG_DATA_DIRS_VSCODE_SNAP_ORIG': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'USERNAME': 'arhamahmed', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': ':/opt/ros/jazzy/share/turtlebot3_gazebo/models:/opt/ros/jazzy/share/turtlebot3_gazebo/models', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'HISTCONTROL': 'ignorespace', 'WINDOWPATH': '2', 'PATH': '/home/arhamahmed/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/arhamahmed/.config/Code/User/globalStorage/github.copilot-chat/copilotCli:/home/arhamahmed/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/arhamahmed/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/arhamahmed/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/arhamahmed-HP-Pavilion-Gaming-Laptop-15-ec0xxx:@/tmp/.ICE-unix/2778,unix/arhamahmed-HP-Pavilion-Gaming-Laptop-15-ec0xxx:/tmp/.ICE-unix/2778', 'GTK_EXE_PREFIX': '/snap/code/234/usr', 'INVOCATION_ID': '3944e65bab16410bacc0c99c5cd7520d', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LOCPATH': '/snap/code/234/usr/lib/locale', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/arhamahmed/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-831c25bc76302d86.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/arhamahmed/.config/Code/User/workspaceStorage/8403e65c1154d44f73a356400f7c67d4/ms-python.python/pythonrc.py', 'GIO_MODULE_DIR_VSCODE_SNAP_ORIG': '', 'XDG_DATA_HOME': '/home/arhamahmed/snap/code/234/.local/share', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'GSETTINGS_SCHEMA_DIR': '/home/arhamahmed/snap/code/234/.local/share/glib-2.0/schemas', 'AMENT_PREFIX_PATH': '/home/arhamahmed/supervisor_ws/install/lstm_localizer:/home/arhamahmed/supervisor_ws/install/ai_supervisor:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GTK_PATH_VSCODE_SNAP_ORIG': '', 'FONTCONFIG_FILE': '/etc/fonts/fonts.conf', 'GTK_IM_MODULE_FILE_VSCODE_SNAP_ORIG': '', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/arhamahmed/supervisor_ws/build/ai_supervisor', 'GIT_MERGE_AUTOEDIT': 'no', 'TURTLEBOT3_MODEL': 'burger', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/home/arhamahmed/snap/code/234/.local/share:/home/arhamahmed/snap/code/234:/snap/code/234/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arhamahmed/supervisor_ws/build/ai_supervisor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages:/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages:/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[4.488960] (-) TimerEvent: {}
+[4.589396] (-) TimerEvent: {}
+[4.690415] (-) TimerEvent: {}
+[4.790899] (-) TimerEvent: {}
+[4.893509] (-) TimerEvent: {}
+[4.995259] (-) TimerEvent: {}
+[5.095668] (-) TimerEvent: {}
+[5.196310] (-) TimerEvent: {}
+[5.298071] (-) TimerEvent: {}
+[5.398661] (-) TimerEvent: {}
+[5.499212] (-) TimerEvent: {}
+[5.600034] (-) TimerEvent: {}
+[5.701513] (-) TimerEvent: {}
+[5.805356] (-) TimerEvent: {}
+[5.898893] (ai_supervisor) StdoutLine: {'line': b'running egg_info\n'}
+[5.909030] (-) TimerEvent: {}
+[6.010002] (-) TimerEvent: {}
+[6.013532] (ai_supervisor) StdoutLine: {'line': b'writing ../../build/ai_supervisor/ai_supervisor.egg-info/PKG-INFO\n'}
+[6.017806] (ai_supervisor) StdoutLine: {'line': b'writing dependency_links to ../../build/ai_supervisor/ai_supervisor.egg-info/dependency_links.txt\n'}
+[6.021569] (ai_supervisor) StdoutLine: {'line': b'writing entry points to ../../build/ai_supervisor/ai_supervisor.egg-info/entry_points.txt\n'}
+[6.023504] (ai_supervisor) StdoutLine: {'line': b'writing requirements to ../../build/ai_supervisor/ai_supervisor.egg-info/requires.txt\n'}
+[6.023797] (ai_supervisor) StdoutLine: {'line': b'writing top-level names to ../../build/ai_supervisor/ai_supervisor.egg-info/top_level.txt\n'}
+[6.110170] (-) TimerEvent: {}
+[6.215412] (-) TimerEvent: {}
+[6.315861] (-) TimerEvent: {}
+[6.403502] (ai_supervisor) StdoutLine: {'line': b"reading manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'\n"}
+[6.406792] (ai_supervisor) StdoutLine: {'line': b"writing manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'\n"}
+[6.408247] (ai_supervisor) StdoutLine: {'line': b'running build\n'}
+[6.410035] (ai_supervisor) StdoutLine: {'line': b'running build_py\n'}
+[6.412870] (ai_supervisor) StdoutLine: {'line': b'copying ai_supervisor/decision_engine.py -> /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor\n'}
+[6.413203] (ai_supervisor) StdoutLine: {'line': b'copying ai_supervisor/safety_agent.py -> /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor\n'}
+[6.415782] (ai_supervisor) StdoutLine: {'line': b'running install\n'}
+[6.418461] (-) TimerEvent: {}
+[6.456242] (ai_supervisor) StdoutLine: {'line': b'running install_lib\n'}
+[6.518830] (-) TimerEvent: {}
+[6.623462] (-) TimerEvent: {}
+[6.677459] (ai_supervisor) StdoutLine: {'line': b'copying /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor/decision_engine.py -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor\n'}
+[6.680870] (ai_supervisor) StdoutLine: {'line': b'copying /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor/safety_agent.py -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor\n'}
+[6.681291] (ai_supervisor) StdoutLine: {'line': b'byte-compiling /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor/safety_agent.py to safety_agent.cpython-312.pyc\n'}
+[6.685976] (ai_supervisor) StdoutLine: {'line': b'running install_data\n'}
+[6.694751] (ai_supervisor) StdoutLine: {'line': b'running install_egg_info\n'}
+[6.727376] (-) TimerEvent: {}
+[6.787231] (ai_supervisor) StdoutLine: {'line': b"removing '/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor-0.0.1-py3.12.egg-info' (and everything under it)\n"}
+[6.792739] (ai_supervisor) StdoutLine: {'line': b'Copying ../../build/ai_supervisor/ai_supervisor.egg-info to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor-0.0.1-py3.12.egg-info\n'}
+[6.795216] (ai_supervisor) StdoutLine: {'line': b'running install_scripts\n'}
+[6.827501] (-) TimerEvent: {}
+[6.929019] (-) TimerEvent: {}
+[7.029673] (-) TimerEvent: {}
+[7.131838] (-) TimerEvent: {}
+[7.232994] (-) TimerEvent: {}
+[7.336637] (-) TimerEvent: {}
+[7.434955] (ai_supervisor) StdoutLine: {'line': b'Installing decision_engine script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor\n'}
+[7.435479] (ai_supervisor) StdoutLine: {'line': b'Installing flow_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor\n'}
+[7.436149] (ai_supervisor) StdoutLine: {'line': b'Installing override_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor\n'}
+[7.440299] (-) TimerEvent: {}
+[7.440569] (ai_supervisor) StdoutLine: {'line': b'Installing safety_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor\n'}
+[7.442724] (ai_supervisor) StdoutLine: {'line': b"writing list of installed files to '/home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log'\n"}
+[7.544025] (-) TimerEvent: {}
+[7.628574] (ai_supervisor) CommandEnded: {'returncode': 0}
+[7.646161] (-) TimerEvent: {}
+[7.675235] (ai_supervisor) JobEnded: {'identifier': 'ai_supervisor', 'rc': 0}
+[7.679870] (-) EventReactorShutdown: {}

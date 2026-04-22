@@ -1,0 +1,29 @@
+[1.818s] Invoking command in '/home/arhamahmed/supervisor_ws/src/lstm_localizer': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/lstm_localizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lstm_localizer build --build-base /home/arhamahmed/supervisor_ws/build/lstm_localizer/build install --record /home/arhamahmed/supervisor_ws/build/lstm_localizer/install.log --single-version-externally-managed install_data
+[2.332s] running egg_info
+[2.367s] writing ../../build/lstm_localizer/lstm_localizer.egg-info/PKG-INFO
+[2.369s] writing dependency_links to ../../build/lstm_localizer/lstm_localizer.egg-info/dependency_links.txt
+[2.369s] writing entry points to ../../build/lstm_localizer/lstm_localizer.egg-info/entry_points.txt
+[2.370s] writing requirements to ../../build/lstm_localizer/lstm_localizer.egg-info/requires.txt
+[2.370s] writing top-level names to ../../build/lstm_localizer/lstm_localizer.egg-info/top_level.txt
+[2.447s] reading manifest file '../../build/lstm_localizer/lstm_localizer.egg-info/SOURCES.txt'
+[2.453s] writing manifest file '../../build/lstm_localizer/lstm_localizer.egg-info/SOURCES.txt'
+[2.453s] running build
+[2.454s] running build_py
+[2.454s] copying lstm_localizer/lstm_covariance_node.py -> /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer
+[2.454s] copying lstm_localizer/ai_covariance_updater.py -> /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer
+[2.454s] running install
+[2.464s] running install_lib
+[2.503s] copying /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer/lstm_covariance_node.py -> /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer
+[2.503s] copying /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer/ai_covariance_updater.py -> /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer
+[2.504s] byte-compiling /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer/lstm_covariance_node.py to lstm_covariance_node.cpython-312.pyc
+[2.508s] byte-compiling /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer/ai_covariance_updater.py to ai_covariance_updater.cpython-312.pyc
+[2.509s] running install_data
+[2.510s] copying launch/lstm_localizer.launch.py -> /home/arhamahmed/supervisor_ws/install/lstm_localizer/share/lstm_localizer/launch
+[2.510s] running install_egg_info
+[2.549s] removing '/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer-0.0.1-py3.12.egg-info' (and everything under it)
+[2.556s] Copying ../../build/lstm_localizer/lstm_localizer.egg-info to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer-0.0.1-py3.12.egg-info
+[2.558s] running install_scripts
+[2.828s] Installing ai_covariance_updater script to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/lstm_localizer
+[2.829s] Installing lstm_covariance_node script to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/lstm_localizer
+[2.829s] writing list of installed files to '/home/arhamahmed/supervisor_ws/build/lstm_localizer/install.log'
+[2.928s] Invoked command in '/home/arhamahmed/supervisor_ws/src/lstm_localizer' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/lstm_localizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lstm_localizer build --build-base /home/arhamahmed/supervisor_ws/build/lstm_localizer/build install --record /home/arhamahmed/supervisor_ws/build/lstm_localizer/install.log --single-version-externally-managed install_data

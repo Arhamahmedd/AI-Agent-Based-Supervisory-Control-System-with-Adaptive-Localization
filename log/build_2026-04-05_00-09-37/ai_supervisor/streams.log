@@ -1,0 +1,32 @@
+[2.964s] Invoking command in '/home/arhamahmed/supervisor_ws/src/ai_supervisor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/ai_supervisor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ai_supervisor build --build-base /home/arhamahmed/supervisor_ws/build/ai_supervisor/build install --record /home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log --single-version-externally-managed install_data
+[3.619s] running egg_info
+[3.619s] creating ../../build/ai_supervisor/ai_supervisor.egg-info
+[3.666s] writing ../../build/ai_supervisor/ai_supervisor.egg-info/PKG-INFO
+[3.666s] writing dependency_links to ../../build/ai_supervisor/ai_supervisor.egg-info/dependency_links.txt
+[3.667s] writing requirements to ../../build/ai_supervisor/ai_supervisor.egg-info/requires.txt
+[3.668s] writing top-level names to ../../build/ai_supervisor/ai_supervisor.egg-info/top_level.txt
+[3.668s] writing manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'
+[3.757s] reading manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'
+[3.758s] writing manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'
+[3.759s] running build
+[3.759s] running build_py
+[3.759s] creating /home/arhamahmed/supervisor_ws/build/ai_supervisor/build
+[3.760s] creating /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib
+[3.760s] creating /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor
+[3.760s] copying ai_supervisor/__init__.py -> /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor
+[3.761s] running install
+[3.774s] running install_lib
+[3.820s] creating /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor
+[3.820s] copying /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor/__init__.py -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor
+[3.821s] byte-compiling /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor/__init__.py to __init__.cpython-312.pyc
+[3.821s] running install_data
+[3.822s] creating /home/arhamahmed/supervisor_ws/install/ai_supervisor/share/ament_index
+[3.822s] creating /home/arhamahmed/supervisor_ws/install/ai_supervisor/share/ament_index/resource_index
+[3.823s] creating /home/arhamahmed/supervisor_ws/install/ai_supervisor/share/ament_index/resource_index/packages
+[3.823s] copying resource/ai_supervisor -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/share/ament_index/resource_index/packages
+[3.823s] copying package.xml -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/share/ai_supervisor
+[3.823s] running install_egg_info
+[3.871s] Copying ../../build/ai_supervisor/ai_supervisor.egg-info to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor-0.0.0-py3.12.egg-info
+[3.873s] running install_scripts
+[4.186s] writing list of installed files to '/home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log'
+[4.320s] Invoked command in '/home/arhamahmed/supervisor_ws/src/ai_supervisor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/ai_supervisor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ai_supervisor build --build-base /home/arhamahmed/supervisor_ws/build/ai_supervisor/build install --record /home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log --single-version-externally-managed install_data

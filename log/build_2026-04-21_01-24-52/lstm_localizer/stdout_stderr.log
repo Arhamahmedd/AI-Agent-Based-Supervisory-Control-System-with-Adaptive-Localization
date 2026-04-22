@@ -1,0 +1,29 @@
+running egg_info
+writing ../../build/lstm_localizer/lstm_localizer.egg-info/PKG-INFO
+writing dependency_links to ../../build/lstm_localizer/lstm_localizer.egg-info/dependency_links.txt
+writing entry points to ../../build/lstm_localizer/lstm_localizer.egg-info/entry_points.txt
+writing requirements to ../../build/lstm_localizer/lstm_localizer.egg-info/requires.txt
+writing top-level names to ../../build/lstm_localizer/lstm_localizer.egg-info/top_level.txt
+reading manifest file '../../build/lstm_localizer/lstm_localizer.egg-info/SOURCES.txt'
+writing manifest file '../../build/lstm_localizer/lstm_localizer.egg-info/SOURCES.txt'
+running build
+running build_py
+copying lstm_localizer/lstm_covariance_node.py -> /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer
+running install
+running install_lib
+copying /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer/lstm_covariance_node.py -> /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer
+byte-compiling /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer/lstm_covariance_node.py to lstm_covariance_node.cpython-312.pyc
+  File "/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer/lstm_covariance_node.py", line 121
+    self.csv_writer.writerow([Fix the LSTM node to accept sim time:Fix the LSTFix the LSTFix the LSTFix the LSTFix the LSTM node to accept sim time:M node to accept sim time:M node to accept sim time:M node to accept sim time:M node to accept sim time:
+                              ^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+
+running install_data
+copying config/ekf.yaml -> /home/arhamahmed/supervisor_ws/install/lstm_localizer/share/lstm_localizer/config
+running install_egg_info
+removing '/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer-0.0.1-py3.12.egg-info' (and everything under it)
+Copying ../../build/lstm_localizer/lstm_localizer.egg-info to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer-0.0.1-py3.12.egg-info
+running install_scripts
+Installing ai_covariance_updater script to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/lstm_localizer
+Installing lstm_covariance_node script to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/lstm_localizer
+writing list of installed files to '/home/arhamahmed/supervisor_ws/build/lstm_localizer/install.log'

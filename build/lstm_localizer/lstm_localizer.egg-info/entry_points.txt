@@ -1,0 +1,3 @@
+[console_scripts]
+ai_covariance_updater = lstm_localizer.ai_covariance_updater:main
+lstm_covariance_node = lstm_localizer.lstm_covariance_node:main

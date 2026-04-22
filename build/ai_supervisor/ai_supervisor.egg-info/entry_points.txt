@@ -1,0 +1,5 @@
+[console_scripts]
+decision_engine = ai_supervisor.decision_engine:main
+flow_agent = ai_supervisor.flow_agent:main
+override_agent = ai_supervisor.override_agent:main
+safety_agent = ai_supervisor.safety_agent:main

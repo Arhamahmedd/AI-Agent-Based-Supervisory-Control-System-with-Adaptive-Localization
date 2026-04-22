@@ -1,0 +1,30 @@
+[2.238s] Invoking command in '/home/arhamahmed/supervisor_ws/src/lstm_localizer': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/lstm_localizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lstm_localizer build --build-base /home/arhamahmed/supervisor_ws/build/lstm_localizer/build install --record /home/arhamahmed/supervisor_ws/build/lstm_localizer/install.log --single-version-externally-managed install_data
+[2.797s] running egg_info
+[2.837s] writing ../../build/lstm_localizer/lstm_localizer.egg-info/PKG-INFO
+[2.838s] writing dependency_links to ../../build/lstm_localizer/lstm_localizer.egg-info/dependency_links.txt
+[2.839s] writing entry points to ../../build/lstm_localizer/lstm_localizer.egg-info/entry_points.txt
+[2.839s] writing requirements to ../../build/lstm_localizer/lstm_localizer.egg-info/requires.txt
+[2.840s] writing top-level names to ../../build/lstm_localizer/lstm_localizer.egg-info/top_level.txt
+[2.926s] reading manifest file '../../build/lstm_localizer/lstm_localizer.egg-info/SOURCES.txt'
+[2.929s] writing manifest file '../../build/lstm_localizer/lstm_localizer.egg-info/SOURCES.txt'
+[2.930s] running build
+[2.931s] running build_py
+[2.933s] copying lstm_localizer/lstm_covariance_node.py -> /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer
+[2.933s] running install
+[2.948s] running install_lib
+[3.001s] copying /home/arhamahmed/supervisor_ws/build/lstm_localizer/build/lib/lstm_localizer/lstm_covariance_node.py -> /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer
+[3.001s] byte-compiling /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer/lstm_covariance_node.py to lstm_covariance_node.cpython-312.pyc
+[3.004s]   File "/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer/lstm_covariance_node.py", line 124
+[3.004s]     self.csv_writer.writerow([Fix the LSTM node to accept sim time:Fix the LSTFix the LSTFix the LSTFix the LSTFix the LSTM node to accept sim time:M node to accept sim time:M node to accept sim time:M node to accept sim time:M node to accept sim time:
+[3.005s]                               ^^^^^^^
+[3.005s] SyntaxError: invalid syntax. Perhaps you forgot a comma?
+[3.005s] 
+[3.005s] running install_data
+[3.005s] running install_egg_info
+[3.049s] removing '/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer-0.0.1-py3.12.egg-info' (and everything under it)
+[3.049s] Copying ../../build/lstm_localizer/lstm_localizer.egg-info to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages/lstm_localizer-0.0.1-py3.12.egg-info
+[3.052s] running install_scripts
+[3.364s] Installing ai_covariance_updater script to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/lstm_localizer
+[3.364s] Installing lstm_covariance_node script to /home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/lstm_localizer
+[3.365s] writing list of installed files to '/home/arhamahmed/supervisor_ws/build/lstm_localizer/install.log'
+[3.495s] Invoked command in '/home/arhamahmed/supervisor_ws/src/lstm_localizer' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/lstm_localizer/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/lstm_localizer/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lstm_localizer build --build-base /home/arhamahmed/supervisor_ws/build/lstm_localizer/build install --record /home/arhamahmed/supervisor_ws/build/lstm_localizer/install.log --single-version-externally-managed install_data

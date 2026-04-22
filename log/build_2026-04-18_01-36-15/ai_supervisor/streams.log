@@ -1,0 +1,25 @@
+[2.978s] Invoking command in '/home/arhamahmed/supervisor_ws/src/ai_supervisor': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/ai_supervisor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ai_supervisor build --build-base /home/arhamahmed/supervisor_ws/build/ai_supervisor/build install --record /home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log --single-version-externally-managed install_data
+[3.891s] running egg_info
+[3.954s] writing ../../build/ai_supervisor/ai_supervisor.egg-info/PKG-INFO
+[3.956s] writing dependency_links to ../../build/ai_supervisor/ai_supervisor.egg-info/dependency_links.txt
+[3.958s] writing entry points to ../../build/ai_supervisor/ai_supervisor.egg-info/entry_points.txt
+[3.961s] writing requirements to ../../build/ai_supervisor/ai_supervisor.egg-info/requires.txt
+[3.963s] writing top-level names to ../../build/ai_supervisor/ai_supervisor.egg-info/top_level.txt
+[4.073s] reading manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'
+[4.077s] writing manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'
+[4.079s] running build
+[4.081s] running build_py
+[4.082s] copying ai_supervisor/flow_agent.py -> /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor
+[4.089s] running install
+[4.105s] running install_lib
+[4.178s] copying /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor/flow_agent.py -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor
+[4.181s] byte-compiling /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor/flow_agent.py to flow_agent.cpython-312.pyc
+[4.186s] running install_data
+[4.186s] running install_egg_info
+[4.261s] removing '/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor-0.0.0-py3.12.egg-info' (and everything under it)
+[4.264s] Copying ../../build/ai_supervisor/ai_supervisor.egg-info to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor-0.0.0-py3.12.egg-info
+[4.266s] running install_scripts
+[4.745s] Installing flow_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor
+[4.745s] Installing safety_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor
+[4.746s] writing list of installed files to '/home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log'
+[4.901s] Invoked command in '/home/arhamahmed/supervisor_ws/src/ai_supervisor' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/arhamahmed/supervisor_ws/build/ai_supervisor/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ai_supervisor build --build-base /home/arhamahmed/supervisor_ws/build/ai_supervisor/build install --record /home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log --single-version-externally-managed install_data

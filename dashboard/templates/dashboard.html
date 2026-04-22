@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Supervisory Control Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #1e293b;
+      border-bottom: 2px solid #2E75B6;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 { color: #60a5fa; font-size: 1.3em; }
+    .header .subtitle { color: #94a3b8; font-size: 0.85em; }
+    .header .clock { color: #94a3b8; font-size: 0.9em; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #334155;
+    }
+
+    .card h3 {
+      color: #90caf9;
+      font-size: 0.85em;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 8px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-size: 1.6em;
+      font-weight: bold;
+      padding: 6px 16px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .GREEN,  .NOMINAL  { background: #14532d; color: #4ade80; }
+    .AMBER             { background: #78350f; color: #fbbf24; }
+    .RED               { background: #7f1d1d; color: #f87171; }
+    .CONTINUE          { background: #14532d; color: #4ade80; }
+    .REDUCE_SPEED      { background: #78350f; color: #fbbf24; }
+    .STOP              { background: #7f1d1d; color: #f87171; }
+    .FLAG_MAINTENANCE  { background: #312e81; color: #a5b4fc; }
+    .DEGRADED          { background: #78350f; color: #fbbf24; }
+    .UNKNOWN           { background: #1e293b; color: #94a3b8; }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88em;
+      color: #94a3b8;
+      margin: 6px 0;
+    }
+
+    .metric-val { color: #e2e8f0; font-weight: 500; }
+
+    .health-bar-bg {
+      background: #0f172a;
+      border-radius: 6px;
+      height: 14px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+
+    .health-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.5s ease, background 0.5s ease;
+    }
+
+    .reason-text {
+      font-size: 0.8em;
+      color: #64748b;
+      margin-top: 8px;
+      line-height: 1.4;
+      min-height: 36px;
+    }
+
+    .full-width { grid-column: 1 / -1; }
+
+    .log-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78em;
+    }
+
+    .log-table th {
+      background: #0f172a;
+      color: #60a5fa;
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .log-table td {
+      padding: 7px 10px;
+      border-bottom: 1px solid #1e293b;
+      color: #cbd5e1;
+    }
+
+    .log-table tr:hover td { background: #1e293b; }
+
+    .decision-chip {
+      font-size: 0.75em;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .sparkline-container {
+      height: 50px;
+      margin-top: 10px;
+    }
+
+    canvas { width: 100% !important; }
+
+    #connection-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #4ade80;
+      display: inline-block;
+      margin-right: 6px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>AI-Agent Supervisory Control System</h1>
+    <div class="subtitle">LSTM-Enhanced Mobile Robot Localization Monitor — ROS 2 Jazzy</div>
+  </div>
+  <div>
+    <span id="connection-dot"></span>
+    <span class="clock" id="clock">--:--:--</span>
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- Safety Agent Card -->
+  <div class="card">
+    <h3>Safety Agent</h3>
+    <div id="safety-badge" class="status-badge UNKNOWN">UNKNOWN</div>
+    <div class="metric-row">
+      <span>Health Score</span>
+      <span class="metric-val" id="health-score">-- / 100</span>
+    </div>
+    <div class="health-bar-bg">
+      <div id="health-bar" class="health-bar-fill" style="width:0%"></div>
+    </div>
+    <div class="metric-row">
+      <span>Yaw Error</span>
+      <span class="metric-val" id="yaw-error">-- rad</span>
+    </div>
+    <div class="metric-row">
+      <span>Threshold (RED)</span>
+      <span class="metric-val">0.15 rad</span>
+    </div>
+    <div class="reason-text" id="safety-reason">Waiting for data...</div>
+  </div>
+
+  <!-- Decision Engine Card -->
+  <div class="card">
+    <h3>Decision Engine</h3>
+    <div id="decision-badge" class="status-badge UNKNOWN">UNKNOWN</div>
+    <div class="metric-row">
+      <span>Overrides Detected</span>
+      <span class="metric-val" id="override-count">0</span>
+    </div>
+    <div class="metric-row">
+      <span>Safety Input</span>
+      <span class="metric-val" id="dec-safety">--</span>
+    </div>
+    <div class="metric-row">
+      <span>Flow Input</span>
+      <span class="metric-val" id="dec-flow">--</span>
+    </div>
+    <div class="reason-text" id="decision-reason">Waiting for data...</div>
+  </div>
+
+  <!-- Flow Agent Card -->
+  <div class="card">
+    <h3>Navigation Flow Agent</h3>
+    <div id="flow-badge" class="status-badge UNKNOWN">UNKNOWN</div>
+    <div class="metric-row">
+      <span>Avg Health (50-sample)</span>
+      <span class="metric-val" id="avg-health">--</span>
+    </div>
+    <div class="metric-row">
+      <span>Degraded Threshold</span>
+      <span class="metric-val">50 / 100</span>
+    </div>
+    <div class="reason-text" id="flow-rec">Waiting for data...</div>
+    <div class="sparkline-container">
+      <canvas id="sparkline"></canvas>
+    </div>
+  </div>
+
+  <!-- Decision Audit Log -->
+  <div class="card full-width">
+    <h3>Decision Audit Log — Last 20 Decisions</h3>
+    <table class="log-table">
+      <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Decision</th>
+          <th>Safety</th>
+          <th>Flow</th>
+          <th>Overrides</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody id="log-body">
+        <tr><td colspan="6" style="color:#475569;text-align:center;padding:20px">
+          Waiting for decisions...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+// ── Health sparkline ─────────────────────────────────────────────────────────
+function drawSparkline(data) {
+  const canvas = document.getElementById('sparkline');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth;
+  const H = 48;
+  canvas.width  = W;
+  canvas.height = H;
+  ctx.clearRect(0, 0, W, H);
+
+  if (data.length < 2) return;
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#60a5fa';
+  ctx.lineWidth = 2;
+
+  data.forEach((v, i) => {
+    const x = (i / (data.length - 1)) * W;
+    const y = H - (v / 100) * H;
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.stroke();
+
+  // Fill
+  ctx.lineTo(W, H);
+  ctx.lineTo(0, H);
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(96,165,250,0.1)';
+  ctx.fill();
+}
+
+// ── Status badge update ──────────────────────────────────────────────────────
+function setBadge(id, status) {
+  const el = document.getElementById(id);
+  el.textContent = status || 'UNKNOWN';
+  el.className = 'status-badge ' + (status || 'UNKNOWN').replace(/ /g,'_');
+}
+
+// ── Decision chip colour ─────────────────────────────────────────────────────
+function decisionChip(decision) {
+  const colours = {
+    CONTINUE:         '#14532d',
+    REDUCE_SPEED:     '#78350f',
+    STOP:             '#7f1d1d',
+    FLAG_MAINTENANCE: '#312e81',
+    UNKNOWN:          '#1e293b',
+  };
+  const text = {
+    CONTINUE:         '#4ade80',
+    REDUCE_SPEED:     '#fbbf24',
+    STOP:             '#f87171',
+    FLAG_MAINTENANCE: '#a5b4fc',
+    UNKNOWN:          '#94a3b8',
+  };
+  const bg  = colours[decision] || colours.UNKNOWN;
+  const col = text[decision]    || text.UNKNOWN;
+  return `<span class="decision-chip" style="background:${bg};color:${col}">${decision}</span>`;
+}
+
+// ── Main update loop ─────────────────────────────────────────────────────────
+async function update() {
+  try {
+    const r = await fetch('/api/state');
+    const d = await r.json();
+
+    // Safety
+    const safety = d.safety || {};
+    setBadge('safety-badge', safety.status);
+    const hs = safety.health_score != null ? safety.health_score.toFixed(1) : '--';
+    document.getElementById('health-score').textContent = hs + ' / 100';
+    document.getElementById('yaw-error').textContent =
+      safety.yaw_error != null ? safety.yaw_error.toFixed(4) + ' rad' : '-- rad';
+    document.getElementById('safety-reason').textContent =
+      safety.reason || '';
+
+    // Health bar colour
+    const hsNum = safety.health_score || 0;
+    const barEl = document.getElementById('health-bar');
+    barEl.style.width = hsNum + '%';
+    barEl.style.background =
+      hsNum > 60 ? '#4ade80' :
+      hsNum > 30 ? '#fbbf24' : '#f87171';
+
+    // Decision
+    const dec = d.decision || {};
+    setBadge('decision-badge', dec.decision);
+    document.getElementById('override-count').textContent =
+      dec.overrides != null ? dec.overrides : '0';
+    document.getElementById('dec-safety').textContent = dec.safety || '--';
+    document.getElementById('dec-flow').textContent   = dec.flow   || '--';
+    document.getElementById('decision-reason').textContent =
+      dec.reason || '';
+
+    // Flow
+    const flow = d.flow || {};
+    setBadge('flow-badge', flow.status);
+    document.getElementById('avg-health').textContent =
+      flow.avg_health != null ? flow.avg_health.toFixed(1) : '--';
+    document.getElementById('flow-rec').textContent =
+      flow.recommendation || '';
+
+    // Sparkline
+    if (d.health_history && d.health_history.length > 1) {
+      drawSparkline(d.health_history);
+    }
+
+    // Audit log from API
+    const lr = await fetch('/api/decisions');
+    const decisions = await lr.json();
+    const tbody = document.getElementById('log-body');
+    if (decisions.length > 0) {
+      tbody.innerHTML = decisions.slice(0, 20).map(row => `
+        <tr>
+          <td style="color:#64748b;white-space:nowrap">
+            ${row.timestamp ? row.timestamp.substring(11,19) : '--'}</td>
+          <td>${decisionChip(row.decision)}</td>
+          <td><span class="decision-chip ${row.safety}">${row.safety}</span></td>
+          <td>${row.flow || '--'}</td>
+          <td>${row.overrides}</td>
+          <td style="color:#94a3b8;font-size:0.75em">${row.reason}</td>
+        </tr>
+      `).join('');
+    }
+
+    // Connection dot
+    document.getElementById('connection-dot').style.background = '#4ade80';
+
+  } catch (e) {
+    document.getElementById('connection-dot').style.background = '#f87171';
+  }
+
+  // Clock
+  document.getElementById('clock').textContent =
+    new Date().toLocaleTimeString();
+}
+
+setInterval(update, 1000);
+update();
+</script>
+</body>
+</html>

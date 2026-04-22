@@ -1,0 +1,26 @@
+running egg_info
+writing ../../build/ai_supervisor/ai_supervisor.egg-info/PKG-INFO
+writing dependency_links to ../../build/ai_supervisor/ai_supervisor.egg-info/dependency_links.txt
+writing entry points to ../../build/ai_supervisor/ai_supervisor.egg-info/entry_points.txt
+writing requirements to ../../build/ai_supervisor/ai_supervisor.egg-info/requires.txt
+writing top-level names to ../../build/ai_supervisor/ai_supervisor.egg-info/top_level.txt
+reading manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'
+writing manifest file '../../build/ai_supervisor/ai_supervisor.egg-info/SOURCES.txt'
+running build
+running build_py
+copying ai_supervisor/decision_engine.py -> /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor
+running install
+running install_lib
+copying /home/arhamahmed/supervisor_ws/build/ai_supervisor/build/lib/ai_supervisor/decision_engine.py -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor
+byte-compiling /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor/decision_engine.py to decision_engine.cpython-312.pyc
+running install_data
+creating /home/arhamahmed/supervisor_ws/install/ai_supervisor/share/ai_supervisor/launch
+copying launch/supervisor.launch.py -> /home/arhamahmed/supervisor_ws/install/ai_supervisor/share/ai_supervisor/launch
+running install_egg_info
+Copying ../../build/ai_supervisor/ai_supervisor.egg-info to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/python3.12/site-packages/ai_supervisor-0.0.1-py3.12.egg-info
+running install_scripts
+Installing decision_engine script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor
+Installing flow_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor
+Installing override_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor
+Installing safety_agent script to /home/arhamahmed/supervisor_ws/install/ai_supervisor/lib/ai_supervisor
+writing list of installed files to '/home/arhamahmed/supervisor_ws/build/ai_supervisor/install.log'
